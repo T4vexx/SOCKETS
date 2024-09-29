@@ -1,11 +1,15 @@
 # PROJETO SOCKETS - SIMULADOR DE MPI_REDUCE()
 
-## DESCRICÃO
+### DESCRICÃO
+Este projeto é uma implementação de uma simulação do algoritmo MPI_REDUCE utilizando sockets TCP/IP em C. A ideia central é dividir a soma de um conjunto de números entre diferentes processos (chamados de workers), que executam em paralelo, seguindo uma estrutura de árvore binária.
 
-O projeto foi desenvolvido em C com o intuido de imitar um MPI_REDUCE(), nesse projeto usamos 8 processos diferentes para somar um array de 8 valores.
-Os valores são divididos em 8 processos, que usando o método de sincronismo borboleta, soma os valores e devolve para o servidor central que printa o valor da soma.
+### Funcionalidades
+- Arquitetura Paralela: Utiliza uma abordagem de árvore binária, na qual os workers realizam a redução de valores de maneira hierárquica, até que o resultado final seja obtido.
+- Comunicação via Sockets: O envio e recebimento de dados entre os processos é feito através de sockets TCP/IP, simulando a comunicação ponto-a-ponto entre os workers e o manager.
+- Escalabilidade: O número de workers pode ser configurado facilmente, permitindo a execução em diferentes tamanhos de árvore binária para paralelismo.
+- Sincronização: Implementação de sincronização para garantir que os workers trabalhem em conjunto e enviem dados ao manager somente após a conclusão da operação de redução.
 
-## CONFIGURÇÃO
+### CONFIGURÇÃO
 
 Você deve ter instalado no linux o gcc e o build-essentials para rodar o processo.
 Para limpar os arquivos executáveis basta digitar
