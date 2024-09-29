@@ -10,18 +10,15 @@ Os valores são divididos em 8 processos, que usando o método de sincronismo bo
 Você deve ter instalado no linux o gcc e o build-essentials para rodar o processo.
 Para limpar os arquivos executáveis basta digitar
 	
-		make clean
-	
+	make clean
 
 Para buildar o trabalho basta digitar
 	
-		make build
+	make build
 	
-
 Para executar o trabalho basta digitar
 	
-		make exec
+	make exec
 	
-
 Após executar o os processos via make exec, espere que o manager ira printar o resultado
 
