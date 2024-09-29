@@ -25,3 +25,20 @@ Para executar o trabalho basta digitar
 	
 Após executar o os processos via make exec, espere que o manager ira printar o resultado
 
+![image](https://github.com/user-attachments/assets/a8db22d3-f8f9-4f6f-a949-82f390cfad22)
+
+### Considerações
+A forma de iniciar o worker é ./worker <id_do_worker_começando_pelo_0> <valor_do_woker_para_ser_somado>
+Na lógica para spawnar os processos workers, no arquivo exec_trabalho.sh coloquei todos os worker para iniciarem com o **valor 10**, se quiser mudar e colocar outros valores para fazer a soma basta modificar essa lógica
+
+	for i in {0..7}
+	do
+		./worker $i 10 &
+		if [ $? -ne 0 ] then
+			echo "Erro ao iniciar o processo worker $i"
+			exit 1
+		fi
+		sleep 1
+	done
+
+Portanto na lógica atual a **resposta correta é 80**
